@@ -1,5 +1,15 @@
+import PokemonCard from './components/PokemonCard'
+
 import './App.css'
 
-export default function App() {
-    return <h1>Pokédex</h1>
+function App() {
+  return (
+    <>
+     <div>
+      <PokemonCard></PokemonCard>
+      </div>
+
+    </>
+  )
 }
+export default App
