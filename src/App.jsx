@@ -4,12 +4,9 @@ import './App.css'
 
 function App() {
   return (
-    <>
      <div>
-      <PokemonCard></PokemonCard>
+     <PokemonCard />
       </div>
-
-    </>
   )
 }
 export default App
