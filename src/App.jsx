@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import PokemonCard from './components/PokemonCard'
 import './App.css'
 
@@ -11,9 +12,28 @@ const pokemonList = [
 ];
 
 function App() {
+  const [pokemonIndex, setPokemonIndex] = useState(0);
+
+  const handlePrevious = () => {
+    setPokemonIndex((prevIndex) => prevIndex - 1);
+  };
+
+  const handleNext = () => {
+    setPokemonIndex((prevIndex) => prevIndex + 1);
+  };
+
   return (
     <div>
-      <PokemonCard pokemon={pokemonList[0]} />
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+
+      {pokemonIndex > 0 ?
+        <button onClick={handlePrevious}>Précédent</button> :
+        <button>Précédent</button>}
+
+      {pokemonIndex < pokemonList.length - 1 ?
+        <button onClick={handleNext}>Suivant</button> :
+        <button>Suivant</button>}
+
     </div>
   );
 }
